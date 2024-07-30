@@ -1,5 +1,6 @@
 # Grounded-Instruct-Pix2Pix: Improving Instruction Based Image Editing with Automatic Target Grounding
 
+Edited for [Google Colab](https://colab.research.google.com/drive/10jA1KcOMGctfKfiemIkEZIbLzKcaK3Ua?usp=sharing)
 
 ---
 Artur Shagidanov*, Hayk Poghosyan*, Xinyu Gong*, Zhangyang Wang, Shant Navasardyan, Humphrey Shi
