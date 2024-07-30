@@ -12,6 +12,16 @@ from torchmetrics.multimodal.clip_score import CLIPScore
 # Grounding DINO + Segment Anything
 from segment_anything import build_sam, SamPredictor
 
+import sys
+import os
+
+# Get the current script's directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Add the GroundingDino folder to the Python path
+groundingdino_path = os.path.join(current_dir, 'GroundingDINO')
+sys.path.append(groundingdino_path)
+
 import groundingdino.datasets.transforms as T
 from groundingdino.models import build_model
 from groundingdino.util import box_ops
@@ -58,7 +68,7 @@ class ExternalMaskExtractor():
         self.groundingdino_model = load_model_hf(ckpt_repo_id, ckpt_filename, ckpt_config_filename)
         
         # Next, load Segment-Anything
-        sam_path = '/home/artur.shagidanov/text-guided-image-editing/Grounded-Segment-Anything/sam_vit_h_4b8939.pth'
+        sam_path = '/content/Grounded-Instruct-Pix2Pix/sam_vit_h_4b8939.pth'
         sam = build_sam(checkpoint=sam_path).to(device)
         self.sam_predictor = SamPredictor(sam)
 

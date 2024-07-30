@@ -24,13 +24,13 @@ from transformers import CLIPImageProcessor, CLIPTextModel, CLIPTokenizer
 from diffusers.loaders import LoraLoaderMixin, TextualInversionLoaderMixin
 from diffusers.models import AutoencoderKL, UNet2DConditionModel
 from diffusers.schedulers import KarrasDiffusionSchedulers
+from diffusers.utils.torch_utils import randn_tensor
 from diffusers.utils import (
     PIL_INTERPOLATION,
     deprecate,
     is_accelerate_available,
     is_accelerate_version,
     logging,
-    randn_tensor,
     BaseOutput
 )
 from diffusers.pipelines.pipeline_utils import DiffusionPipeline
